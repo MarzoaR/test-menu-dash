@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 150vh;
+  background-color: tomato;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  background-color: #60b4df;
+  width: 100%;
+  z-index: 1000;
+  /* height: 100px; */
+}
+
+.container-nav {
+  max-width: 1600px;
+  padding: 0 2rem;
+  background-color: #fff;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.logo-container {
+  flex: 1;
+  background-color: red;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container a {
+  display: block;
+  width: 100%;
+}
+
+.nav-btn {
+  flex: 3;
+  background-color: green;
+  display: flex;
+}
+
+.nav-currentcy {
+  flex: 1;
+  background-color: hotpink;
+}
+
+.nav-link {
+
+}
