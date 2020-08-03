@@ -17,7 +17,6 @@ let currentcy_ves = document.querySelector('#currentcy-ves');
 
         currentcy_dollar.innerHTML = `${USD}`;
         currentcy_ves.innerHTML = `${VES}`;
-        // console.log(usd);
       });
   }
   getCurrentcy();
@@ -31,25 +30,18 @@ window.addEventListener('scroll', () => {
   const containerNav = document.querySelector('.container-nav');
   const img = document.querySelector('.logo-container img');
   const logoContainerA = document.querySelector('.logo-container a');
-  // const dDown = document.querySelectorAll('.menu_list__dropdown');
 
   nav.classList.toggle('nav-sticky', window.scrollY > 100 && window.innerWidth > 900)
   containerNav.classList.toggle('sticky', window.scrollY > 100 && window.innerWidth > 900)
-  // containerNav.classList.toggle('color', window.scrollY > 100)
   img.classList.toggle('adaptable', window.scrollY > 100 && window.innerWidth > 900)
   logoContainerA.classList.toggle('a-adaptable', window.scrollY > 100 && window.innerWidth > 900)
 
-  // dDown.forEach(element => {
-  //   element.classList.toggle('dropdown', window.scrollY > 100);
-  // });
 
   if(window.scrollY > 100 && window.innerWidth > 900) {
     img.setAttribute('src', './dashHelpColor.svg');
     nav.setAttribute('height', '80px');
-    // img.setAttribute('width', '80%');
   } else {
     img.setAttribute('src', './dashHelpWhite.svg');
     nav.setAttribute('height', '100px');
-    // img.setAttribute('width', '100%');
   }
 });
