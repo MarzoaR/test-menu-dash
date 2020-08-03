@@ -11,44 +11,362 @@ header {
 nav {
   position: fixed;
   top: 0;
-  background-color: #60b4df;
+  /* background-color: #60b4df; */
   width: 100%;
   z-index: 1000;
   /* height: 100px; */
+  color: #fff;
+  transition: 1s;
+}
+
+.nav-sticky {
+  background-color: #fff;
+  color: rgb(43, 42, 42);
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.16);
 }
 
 .container-nav {
   max-width: 1600px;
   padding: 0 2rem;
-  background-color: #fff;
+  /* background-color: #fff; */
   height: 100px;
   margin: 0 auto;
   display: flex;
+  transition: 1s;
+}
+
+.sticky {
+  height: 80px;
 }
 
 .logo-container {
   flex: 1;
-  background-color: red;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  transition: 1;
+}
+
+.logo-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: 1s;
+}
+
+.logo-container a img {
+  width: 100%;
+}
+
+.a-adaptable {
+  height: 75px;
+}
+
+.adaptable{
+  height: 55px;
+}
+
+
+
+
+
+
+.nav-btn {
+  flex: 3;
+  /* background-color: green; */
   display: flex;
   align-items: center;
 }
 
-.logo-container a {
-  display: block;
-  width: 100%;
+.nav-links {
+  flex: 1;
+  /* background-color: green; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.nav-links > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-link {
+  /* line-height: 100px; */
+  position: relative;
+  /* color: #fff; */
+  padding: 15px 16px;
+  margin: 0 10px;
+  letter-spacing: 1px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  cursor: pointer;
+  transition: .5s;
 }
 
-.nav-btn {
-  flex: 3;
-  background-color: green;
-  display: flex;
+.nav-link > i {
+  margin-left: 5px;
+  transition: .7s;
 }
+
+/* .nav-link:hover {
+  transform: scale(1.1);
+} */
+
+.nav-link:hover i {
+  transform: rotate(180deg);
+}
+
+
+.nav-link > ul {
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  top: 100%;
+  left: 0;
+  /* z-index: 10; */
+}
+
+.dropdown {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: .5s;
+  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dropdown::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: #fff;
+  transform: translateY(-1.2px) rotate(45deg);
+  top: -5px;
+  left: calc(50% - 5px);
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-right: none;
+  /* z-index: 0; */
+}
+
+.dropdown-link > a {
+  display: block;
+  color: #000;
+  padding: .5rem 1rem;
+  text-decoration: none;
+}
+
+.nav-link:hover .dropdown {
+  /* display: block; */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+
+
 
 .nav-currentcy {
   flex: 1;
-  background-color: hotpink;
+  /* background-color: hotpink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-link {
+.nav-currentcy span {
+  display: block;
+  /* color: #fff; */
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.nav-currentcy span:first-child {
+  padding-bottom: 5px;
+}
+
+.hamburger-menu-container {
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+
+
+
+
+@media (max-width: 920px) {
+
+  .container-nav {
+    height: 60px;
+    background-color: #fff;
+    color: rgb(43, 42, 42);
+  }
+
+  .nav-btn {
+    position: fixed;
+    height: calc(100vh - 60px);
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    align-items: initial;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: .65s;
+  }
+
+  #check:checked ~ .nav-btn {
+    transform: translateX(0);
+  }
+
+
+
+  .nav-links {
+    /* flex: initial; */
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .nav-links > ul {
+    padding: 30px;
+    flex-direction: column;
+  }
+
+  .nav-link {
+    width: 100%;
+    line-height: 1;
+    padding: 1.6rem 2rem;
+    /* display: flex;
+    justify-content: space-between; */
+  }
+
+  .nav-link > ul {
+    position: initial;
+    top: initial;
+    left: initial;
+    transform: initial;
+    opacity: 1;
+    pointer-events: auto;
+    display: none;
+  }
+
+  .nav-link:hover > ul {
+    display: block;
+  }
+
+  .dropdown::before {
+    display: none;
+  }
+
+  .dropdown {
+    border: initial;
+    border-radius: initial;
+    background-color: initial;
+  }
+
+  .dropdown-link > a {
+    padding: 1rem;
+  }
+
+  i {
+    float: right;
+  }
+
+
+
+  .nav-currentcy{
+    flex: 3;
+  }
+
+  .nav-currentcy > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-currentcy span {
+    font-size: .8rem;
+  }
+
+  .hamburger-menu-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hamburger-menu {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-menu div {
+    width: 1.6rem;
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgb(43, 42, 42);
+    position: relative;
+    z-index: 1001;
+    transition: .5s;
+  }
+
+  .hamburger-menu div::before,
+  .hamburger-menu div::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: rgb(43, 42, 42);
+    border-radius: inherit;
+    transition: .5s;
+  }
+
+  .hamburger-menu div::before {
+    transform: translateY(-7px);
+  }
+  .hamburger-menu div::after {
+    transform: translateY(7px);
+  }
+
+  #check {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    z-index: 90000;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  #check:checked ~ .hamburger-menu-container .hamburger-menu div {
+    background-color: transparent;
+  }
+  #check:checked ~ .hamburger-menu-container .hamburger-menu div::before {
+    transform: translateY(0) rotate(-45deg);
+  }
+  #check:checked ~ .hamburger-menu-container .hamburger-menu div::after {
+    transform: translateY(0) rotate(45deg);
+  }
 
 }
