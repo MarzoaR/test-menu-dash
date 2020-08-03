@@ -7,6 +7,11 @@ header {
   height: 150vh;
   background-color: tomato;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --primary-fonts: 'Montserrat', sans-serif;
+}
 
 nav {
   position: fixed;
@@ -15,6 +20,7 @@ nav {
   z-index: 1000;
   color: #fff;
   transition: 1s;
+  font-family: var(--primary-fonts);
 }
 
 .nav-sticky {
@@ -200,7 +206,7 @@ nav {
   .responsive {
     display:block;
     height: 50px;
-    width: initial;
+    width: initial !important;
   }
 
   #check:checked ~ .nav-btn {
